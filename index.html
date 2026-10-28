@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="app-header">
+            <h1>Users</h1>
+            <span class="count" id="userCount">0 users</span>
+        </header>
+
+        <div class="layout">
+            <section class="panel form-panel">
+                <h2 id="formTitle">Add a user</h2>
+
+                <form id="userForm" autocomplete="off">
+                    <input type="hidden" id="userId">
+
+                    <label for="name">Full name
+                        <input type="text" id="name" placeholder="Ayesha Khan" required>
+                    </label>
+
+                    <label for="email">Email
+                        <input type="email" id="email" placeholder="ayesha@example.com" required>
+                    </label>
+
+                    <label for="phone">Phone
+                        <input type="tel" id="phone" placeholder="0300 1234567" required>
+                    </label>
+
+                    <label for="city">City
+                        <input type="text" id="city" placeholder="Faisalabad" required>
+                    </label>
+
+                    <div class="actions">
+                        <button type="submit" id="submitBtn" class="btn btn-primary">Add user</button>
+                        <button type="button" id="cancelBtn" class="btn btn-ghost" hidden>Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel list-panel">
+                <div class="list-head">
+                    <h2>All users</h2>
+                    <input type="search" id="search" class="search" placeholder="Search name, email or city" aria-label="Search users">
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Phone</th>
+                                <th>City</th>
+                                <th class="right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userList"></tbody>
+                    </table>
+                </div>
+
+                <p class="empty" id="emptyMessage">No users found.</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
